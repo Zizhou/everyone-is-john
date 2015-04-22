@@ -1,0 +1,45 @@
+a.fill {
+    display: block;
+    height:100%;
+    width:100%;
+    text-decoration: none;
+}
+
+.button {
+float:left;
+height:20px;
+width:90px;
+background-color:#F7C6EA;
+text-align:center;
+border-style:solid;
+margin:4px;
+}
+.button:hover {
+background-color:#CF9FAD;
+}
+
+.outerbox {
+    border-style:solid;
+    width:90%;
+    margin:4px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+.box {
+    border-style:solid;
+    width:95%;
+    margin:4px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
+
+.box:hover {
+    background-color:#d1d1d1;
+}
+
+.clear {
+    clear: both;
+}

@@ -1,0 +1,20 @@
+{% extends 'john/base.html' %}
+{% block head %}
+<marquee>HEAD HEAD HEAD</marquee>
+{% endblock %}
+
+{% block body %}
+<div class = 'outerbox'>
+Look at how formatted this is!
+<br>
+{% for x in threads %}
+    <div class = 'box' style = 'height:30px;'>
+        <a class = 'fill' href = {% url 'john:thread' x.id %}>
+            {{x}}
+        </a>
+    </div>
+{% endfor %}
+</div>
+<!--<div class = 'clear' />-->
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends 'john/base.html' %}
+{% block head %}
+<marquee>HEAD HEAD HEAD</marquee>
+{% endblock %}
+
+{% block body %}
+<div class = 'outerbox'>
+Look at how formatted this is!
+<br>
+{% for x in posts %}
+    <div class = 'box'>
+        {{x.creator}} - {{x.created}}<br><hr>
+        {{x.text}}<br><hr>
+        Willpower:{{x.creator.willpower}}
+    </div>
+{% endfor %}
+</div>
+<div class = 'reply'>
+<form action = '{%url 'john:thread' self_id %}' method = 'post' name = 'quick'>
+{% csrf_token %}
+{{post_form}}
+<input type = 'submit' value='Quick Reply'>
+</form>
+</div>
+<!--<div class = 'clear' />-->
+<a href = {% url 'john:main' %}>link link link</a>
+{% endblock %}
+
