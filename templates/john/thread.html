@@ -15,13 +15,20 @@ Look at how formatted this is!
     </div>
 {% endfor %}
 </div>
+{% if in_thread %}
 <div class = 'reply'>
 <form action = '{%url 'john:thread' self_id %}' method = 'post' name = 'quick'>
 {% csrf_token %}
 {{post_form}}
-<input type = 'submit' value='Quick Reply'>
+<input type = 'submit' value = 'Quick Reply' name = 'quick_reply'>
+{% if in_thread == active %}
+<input type = 'submit' value = 'Action' name = 'action_reply'>
+{% endif %}
+<input type = 'submit' value = 'Long Reply' name = 'long_reply'>
+
 </form>
 </div>
+{% endif %}
 <!--<div class = 'clear' />-->
 <a href = {% url 'john:main' %}>link link link</a>
 {% endblock %}
